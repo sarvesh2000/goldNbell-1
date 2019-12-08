@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>invoice </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700|Indie+Flower' rel='stylesheet' type='text/css'>
+     <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="t1.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+ 	<div>
+         <h1>BILL CALCULATION</h1>
+   <hr>
+     
+    <form id="form1">
+ <div >
+            <label for="name">Product Name</label>
+            <input type="text" class="input"id="name" name="Product Name"   required >
+ </div>
+ <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" class="input"id="quantity" name="Quantity"  required >
+ </div>
+
+ <div>
+            <label for="amount">Amount</label>
+            <input type="number" class="input" id="amount" name="Amount "   required >
+ </div>
+        <div class="btn">
+        	<button type="submit" class="button" id="add">Add </button>
+        </div>
+       <!-- <div>
+            <button type="submit" class="button" onclick="editRow();">Update</button>
+        </div>
+        </form> --> 
+
+        
+<div>
+    <table class="table" id="table">
+	    <thead>
+                <tr>
+                    <th>PRODUCT NAME</th>
+                    <th>QUANTITY</th>
+                    <th>AMOUNT</th>
+                    <th>NET AMOUNT</th>
+                    <th>TAX</th>
+                    <th>GROSS AMOUNT</th>
+                </tr>
+        </thead>
+
+                <tbody></tbody>
+
+            </table>
+        </div>
+            <script type="text/javascript" src="t1.js"></script>
+
+    </body>
+</html>
+  	 

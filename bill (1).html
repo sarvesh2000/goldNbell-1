@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>product table</title>
+<style type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Grenze&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+h1
+{
+  color:#1a1816;
+  
+}
+body
+{
+background-image:linear-gradient(to bottom right,#2e2b29,#bab6b3);
+color:#de2e10;
+text-align: center;
+font-size: 20px;
+}
+#special
+{
+background-color:white;
+text-align:center;
+font-family: 'Gochi Hand', cursive;
+}
+
+table{
+  width:100%;
+}
+
+</style>
+
+<script type="text/javascript">
+  function set(){
+      var name=document.getElementById("pname");
+      var quantity=document.getElementById("pquantity");
+      var taxx=document.getElementById("percent");
+    var amount=document.getElementById("pamount");
+
+
+    if(name.value==""||quantity.value==""||taxx.value==""||amount.value==""){
+      alert("fill the required fields");
+           name.value="";
+           quantity.value="";
+           taxx.value="";
+           amount.value="";
+
+
+    }
+   else{ 
+    var amnt=amount.value*quantity.value;
+    var t=taxx.value;
+    var tax=(t*amnt)/100;
+        var grossamount=amnt;
+        var netamount=amnt-tax;
+         
+      var table = document.getElementById("tab");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            cell1.innerHTML = name.value;
+           cell2.innerHTML = quantity.value;
+           cell3.innerHTML = amount.value;
+           cell4.innerHTML = taxx.value;
+           cell5.innerHTML = tax;
+           cell6.innerHTML = netamount;
+           cell7.innerHTML = grossamount;
+
+           
+            
+            name.value="";
+           quantity.value="";
+           taxx.value="";
+           amount.value="";
+
+         
+       }
+  }
+</script>
+</head>
+
+<body>
+ <h1 id="special">Product order Bill</h1>
+  
+ 
+  <ul>
+     <li>enter product name quantity tax and amount</li>
+     <li>tax net and gross amount will be generated in the table</li>
+     
+   </ul>
+<div class="container">
+<form class="frm">
+ <div class="form-group">
+   <label for="pname"> Product Name:</label>
+   <input type="text" placeholder="name of the product" class="form-control" id="pname" class="input" required>
+   
+ </div>
+ 
+ <div class="form-group"> 
+   <label for="pquantity"> Product Quantity:</label>
+   <input type="integer" placeholder="quantity" id="pquantity"  class="form-control" class="input"required>
+ 
+ </div>  
+ 
+ <div class="form-group"> 
+   <label for="pamount"> Product Amount: </label>
+   <input type="integer" placeholder="amount" id="pamount"   class="form-control"  class="input"required>
+  
+ </div>
+  <div class="form-group"> 
+   <label for="percent"> Product Tax: </label>
+   <input type="integer" placeholder="tax " id="percent"  class="form-control"   class="input"required>
+  
+ </div>
+<div>
+<button onclick="set();">submit</button>
+</div>
+</form>
+</div>
+<div class="container">
+<table border="1" id="tab">
+            <thead>
+                <tr>
+                    <th>PRODUCT NAME</th>
+                    <th>QUANTITY</th>
+                    <th>AMOUNT</th>
+                    
+                    <th>TAX %</th>
+                    <th>TAX AMNT</th>
+                    <th>NET AMOUNT</th>
+                    <th>GROSS AMOUNT</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+</div>
+</body>
+</html>
